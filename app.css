@@ -7,3 +7,70 @@ body {
     background: #37474F;
     color: #d1d3d5;
 }
+
+.awesome-browser,
+.old-browser {
+    position: relative;
+    width: 90vw;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center center;
+}
+.awesome-browser h2,
+.old-browser h2 {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    left: 0;
+    font-size: 42px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,1);
+}
+.awesome-browser {
+    display: none;
+    height: 70vh;
+    background-image: url('static_assets/awesome.gif');
+}
+.old-browser {
+    display: block;
+    height: 90vh;
+    background-image: url('static_assets/sad.gif');
+}
+.grid {
+    display: none;
+}
+
+@supports (display: grid) {
+    .awesome-browser {
+        display: block;
+    }
+    .old-browser {
+        display: none;
+    }
+    .grid {
+        display: grid;
+        width: 90vw;
+        margin: 20px auto 0;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-template-rows: 20vh;
+        grid-rows-gap: 20px;
+    }
+    .grid-cell {
+        background-size: cover;
+        background-position: center center;
+    }
+    .grid-cell--1 {
+        background-image: url('static_assets/1.gif');
+    }
+    .grid-cell--2 {
+        background-image: url('static_assets/2.gif');
+    }
+    .grid-cell--3 {
+        background-image: url('static_assets/3.gif');
+    }
+    .grid-cell--4 {
+        background-image: url('static_assets/4.gif');
+    }
+}
