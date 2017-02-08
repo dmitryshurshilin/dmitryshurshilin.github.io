@@ -1,11 +1,25 @@
-@import 'https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300';
+
+html {
+    font-size: 16px;
+}
 
 body {
     padding: 20px;
-    font-family: 'Anonymous Pro', monospace;
+    font-family: 'Open Sans', monospace;
 
-    background: #37474F;
+    background: #ecf0f1;
     color: #d1d3d5;
+}
+
+a {
+    color: #16a085;
+    border-bottom: 1px solid #16a085;
+    text-decoration: none;
+}
+a:hover {
+    color: #333;
+    border-bottom-color: #333;
 }
 
 .awesome-browser,
@@ -13,29 +27,30 @@ body {
     position: relative;
     width: 90vw;
     margin: 0 auto;
+    padding: 5rem;
+
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
     background-size: cover;
     background-position: center center;
 }
 .awesome-browser h2,
 .old-browser h2 {
-    position: absolute;
-    right: 0;
-    bottom: 20px;
-    left: 0;
-    font-size: 42px;
+    font-size: 4rem;
+    font-weight: 300;
     text-align: center;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0,0,0,1);
+    color: #777;
 }
 .awesome-browser {
     display: none;
     height: 70vh;
-    background-image: url('static_assets/awesome.gif');
+    background-color: #fff;
 }
 .old-browser {
-    display: block;
+    display: flex;
     height: 90vh;
-    background-image: url('static_assets/sad.gif');
+    background-color: #fff;
 }
 .grid {
     display: none;
@@ -43,7 +58,7 @@ body {
 
 @supports (display: grid) {
     .awesome-browser {
-        display: block;
+        display: flex;
     }
     .old-browser {
         display: none;
@@ -58,19 +73,38 @@ body {
         grid-rows-gap: 20px;
     }
     .grid-cell {
+        position: relative;
+    }
+    .grid-cell::after,
+    .grid-cell > .img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .grid-cell::after {
+        content: '';
+        z-index: 2;
+        background-color: #16a085;
+        opacity: .25;
+    }
+    .grid-cell > .img {
+        z-index: 1;
+        filter: grayscale(100%);
         background-size: cover;
         background-position: center center;
     }
-    .grid-cell--1 {
+    .grid-cell--1 > .img {
         background-image: url('static_assets/1.gif');
     }
-    .grid-cell--2 {
+    .grid-cell--2 > .img {
         background-image: url('static_assets/2.gif');
     }
-    .grid-cell--3 {
+    .grid-cell--3 > .img {
         background-image: url('static_assets/3.gif');
     }
-    .grid-cell--4 {
+    .grid-cell--4 > .img {
         background-image: url('static_assets/4.gif');
     }
 }
