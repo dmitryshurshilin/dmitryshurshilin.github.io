@@ -3,6 +3,7 @@
 + [CSS Grids](https://dmitryshurshilin.github.io/)
 + [WebP format](https://dmitryshurshilin.github.io/webp/)
 + [position:sticky](https://dmitryshurshilin.github.io/sticky/)
++ [object-fit](https://dmitryshurshilin.github.io/object-fit/)
 
 ## Links:
 
