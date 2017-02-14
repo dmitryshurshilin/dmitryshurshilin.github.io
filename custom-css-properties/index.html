@@ -3,7 +3,19 @@
     <head>
         <title>Custom CSS Properties</title>
         <style>
-        
+
+            .no-support {
+                display: block;
+                padding: 20px;
+                background-color: #e74c3c;
+                color: #fff;
+            }
+            @supports (--foo: green) {
+                .no-support {
+                    display: none;
+                }
+            }
+
             body {
                 background-color: #efefef;
 
@@ -58,6 +70,9 @@
     </head>
     <body>
         <div class="container">
+            <div class="no-support">
+                Your browser doesn't support custom CSS propeties.
+            </div>
             <h1>Custom CSS Properties</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem deleniti, distinctio quas ipsa labore deserunt consectetur iusto asperiores. Quisquam molestiae eos quaerat! Soluta excepturi nesciunt harum. Hic veniam, dolore repellat totam, aspernatur facilis quas quaerat.</p>
             <ul class="colors">
