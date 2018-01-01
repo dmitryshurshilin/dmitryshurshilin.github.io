@@ -1,10 +1,11 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,700';
 
 html {
     font-size: 16px;
 }
 
 body {
+    margin: 0;
     padding: 20px;
     font-family: 'Open Sans', monospace;
 
@@ -25,7 +26,7 @@ a:hover {
 .awesome-browser,
 .old-browser {
     position: relative;
-    width: 90vw;
+    width: auto;
     margin: 0 auto;
     padding: 5rem;
 
@@ -40,8 +41,13 @@ a:hover {
     font-size: 4rem;
     font-weight: 300;
     text-align: center;
-    color: #777;
+    color: #888;
 }
+    .awesome-browser h2 a,
+    .old-browser h2 a {
+        font-weight: 700;
+        border-bottom-width: 3px;
+    }
 .awesome-browser {
     display: none;
     height: 70vh;
@@ -65,12 +71,38 @@ a:hover {
     }
     .grid {
         display: grid;
-        width: 90vw;
+        width: auto;
         margin: 20px auto 0;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-column-gap: 20px;
         grid-template-rows: 20vh;
-        grid-rows-gap: 20px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    @media (max-width: 1000px) {
+        .awesome-browser {
+            height: 50vh;
+            padding: 2rem;
+        }
+            .awesome-browser h2 {
+                font-size: 3rem;
+            }
+        .grid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 15vh 15vh;
+        }
+    }
+    @media (max-width: 600px) {
+        .awesome-browser {
+            height: auto;
+            padding: 1rem;
+        }
+            .awesome-browser h2 {
+                font-size: 1.5rem;
+            }
+        .grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 20vh 20vh 20vh 20vh;
+        }
     }
     .grid-cell {
         position: relative;
@@ -82,6 +114,7 @@ a:hover {
         right: 0;
         bottom: 0;
         left: 0;
+        overflow: hidden;
     }
     .grid-cell::after {
         content: '';
