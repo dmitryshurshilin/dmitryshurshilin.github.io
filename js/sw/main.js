@@ -8,4 +8,12 @@ if ('serviceWorker' in navigator) {
                 console.log(`Service Worker is not registered -- ${err}`)
             })
     })
-} 
+}
+
+const main = async() => {
+    const response = await fetch('data.json')
+    const data = await response.json()
+    console.log(data)
+}
+
+main()
