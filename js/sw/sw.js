@@ -1,6 +1,10 @@
 const CACHE_NAME = 'test-cache-name'
 const ULRS_TO_CACHE = [
-    '/'
+    '/',
+    '/js/',
+    '/js/sw/',
+    '/js/sw/data.json',
+    'data.json'
 ]
 const OFFLINE_URL = 'offline.html'
 
