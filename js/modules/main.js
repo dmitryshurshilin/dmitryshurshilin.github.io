@@ -7,5 +7,5 @@ document.getElementById('Button').addEventListener('click', () => {
     const script = document.createElement('script')
     script.src = 'second.js'
     script.type = 'module'
-    document.appendChild(script)
+    document.body.appendChild(script)
 })
