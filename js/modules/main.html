@@ -14,16 +14,32 @@
         }
         h1 {
             font-family: 'Alfa Slab One', Arial, "Helvetica Neue", Helvetica, sans-serif;
-            font-size: 10rem;
+            font-size: 6rem;
             letter-spacing: 2.5px;
             color: #444;
 
             text-align: center;
         }
+        .button-container {
+            padding: 40px;
+            text-align: center;
+        }
+        .button-container button {
+            padding: 15px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h1>JS Modules</h1>
+
+    <div class="button-container">
+        <button id="Button">Add second script</button>
+    </div>
+
     <script src="main.js" type="module"></script>
     <script src="modules.js" type="module"></script>
 </body>
