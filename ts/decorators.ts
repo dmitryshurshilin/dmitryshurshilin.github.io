@@ -1,29 +1,36 @@
-function DecoratorForClass(constructor: Function) {
-    console.log(constructor)
-  }
+interface ComponentDecorator {
+    selector: string;
+    template: string;
+}
 
-  function DecoratorForProperty(target: any, propName: string | Symbol) {
-    console.log(target)
-    console.log(propName)
-  }
+function Component(config: ComponentDecorator) {
+    return function <T extends { new(...args: any[]): object }>(Constructor: T) {
+        return class extends Constructor {
+            constructor(...args: any[]) {
+                super(...args)
+                document.querySelector(config.selector)!.innerHTML = config.template
+            }
+        }
+    }
+}
 
-  function DecoratorForMethod(target: any, propName: string | Symbol, descriptior: PropertyDescriptor) {
-    console.log(target)
-    console.log(propName)
-    console.log(descriptior)
-  }
-
-  @DecoratorForClass
-  class Component {
-    @DecoratorForProperty
-    name: string
-
-    constructor(name: string) {
-      this.name = name
+@Component({
+    selector: '#blockParent',
+    template: `
+      <div class="block">
+        <h2 class="block-title">Default Block Title</div>
+        <div class="block-content">Lorem ipsum</div>
+      </div>
+     `
+})
+class BlockComponent {
+    constructor(public title: string) {
+        this.title = title
     }
 
-    @DecoratorForMethod
-    logName():void {
-      console.log(`Component's name is ${this.name}`)
+    logTitle(): void {
+        console.log(`Component's name is ${this.title}`)
     }
-  }
+}
+
+const component = new BlockComponent('Block Title')
