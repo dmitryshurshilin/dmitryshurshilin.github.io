@@ -3,6 +3,7 @@ const {
     sum2,
     sum3,
     maxBenefit,
+    arrayDiff,
 } = require('./main')
 
 /**
@@ -56,4 +57,14 @@ test(`Max sum of [1, 1, 1, 1] is expected to be 4`, () => {
 })
 test(`Max sum of [4, 1, 1, 1] is expected to be 7`, () => {
     expect(maxBenefit([4, 1, 1, 1])).toBe(7)
+})
+
+/**
+ * testing of arrayDiff
+ */
+ test(`Difference between [1, 2, 3] and [1] is expexted to be [2, 3]`, () => {
+    expect(arrayDiff([1, 2, 3], [1])).toEqual([2, 3])
+})
+test(`Difference between [1, 2, 3, 4, 5, 6] and [1, 3, 7] is expexted to be [2, 4, 5, 6]`, () => {
+    expect(arrayDiff([1, 2, 3, 4, 5, 6], [1, 3, 7])).toEqual([2, 4, 5, 6])
 })

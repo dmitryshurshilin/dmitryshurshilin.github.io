@@ -52,9 +52,21 @@ const maxBenefit = (arr) => {
     return res;
 }
 
+/**
+ * Implement a difference function, which subtracts one list from another and returns the result.
+ * It should remove all values from list a, which are present in list b keeping their order.
+ * @param {*} array1 - First array
+ * @param {*} array2 - Second array
+ * @returns - Result array
+ */
+const arrayDiff = (array1, array2) => {
+    return array1.filter((item) => array2.indexOf(item) === -1)
+}
+
 module.exports = {
     sum1,
     sum2,
     sum3,
     maxBenefit,
+    arrayDiff,
 }
