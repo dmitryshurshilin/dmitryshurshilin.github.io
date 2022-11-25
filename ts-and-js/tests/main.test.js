@@ -4,6 +4,7 @@ const {
     sum3,
     maxBenefit,
     arrayDiff,
+    bakeCakes,
 } = require('./main')
 
 /**
@@ -62,9 +63,28 @@ test(`Max sum of [4, 1, 1, 1] is expected to be 7`, () => {
 /**
  * testing of arrayDiff
  */
- test(`Difference between [1, 2, 3] and [1] is expexted to be [2, 3]`, () => {
+test(`Difference between [1, 2, 3] and [1] is expexted to be [2, 3]`, () => {
     expect(arrayDiff([1, 2, 3], [1])).toEqual([2, 3])
 })
 test(`Difference between [1, 2, 3, 4, 5, 6] and [1, 3, 7] is expexted to be [2, 4, 5, 6]`, () => {
     expect(arrayDiff([1, 2, 3, 4, 5, 6], [1, 3, 7])).toEqual([2, 4, 5, 6])
+})
+
+/**
+ * testing of bakeCakes
+ */
+ test(`Bakes count for recipe 1 is expected to be 2`, () => {
+    let recipe = {flour: 500, sugar: 200, eggs: 1}
+    let available = {flour: 1200, sugar: 1200, eggs: 5, milk: 200}
+    expect(bakeCakes(recipe, available)).toBe(2)
+})
+test(`Bakes count for recipe 2 is expected to be 0`, () => {
+    let recipe = {apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}
+    let available = {sugar: 500, flour: 2000, milk: 2000}
+    expect(bakeCakes(recipe, available)).toBe(0)
+})
+test(`Bakes count for recipe 3 is expected to be 1`, () => {
+    let recipe = {flour: 300, sugar: 150, milk: 100, oil: 100}
+    let available = {sugar: 500, flour: 2000, milk: 2000, oil: 100}
+    expect(bakeCakes(recipe, available)).toBe(1)
 })

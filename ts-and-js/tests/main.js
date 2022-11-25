@@ -62,6 +62,24 @@ const maxBenefit = (arr) => {
 const arrayDiff = (array1, array2) => {
     return array1.filter((item) => array2.indexOf(item) === -1)
 }
+/**
+ * Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object)
+ * and returns the maximum number of cakes Pete can bake (integer).
+ * For simplicity there are no units for the amounts
+ * (e.g. 1 lb of flour or 200 g of sugar are simply 1 or 200).
+ * Ingredients that are not present in the objects, can be considered as 0.
+ * @param {*} recipe 
+ * @param {*} available 
+ */
+const bakeCakes = (recipe, available) => {
+    let maxCakesCount = []
+    for (let ingredient in recipe) {
+        maxCakesCount.push(
+            available[ingredient] ? Math.floor(available[ingredient] / recipe[ingredient]) : 0
+        )
+    }
+    return Math.min.apply(null, maxCakesCount)
+}
 
 module.exports = {
     sum1,
@@ -69,4 +87,5 @@ module.exports = {
     sum3,
     maxBenefit,
     arrayDiff,
+    bakeCakes,
 }
