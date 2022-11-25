@@ -29,8 +29,32 @@ const sum3 = (obj) => {
     return sum
 }
 
+/**
+ * There is an array of positive numbers (length is N) with product prices on duration of N days.
+ * We produce one more product every day. There is a storehouse where products can be stored.
+ * Calculate the max benefit we can have selling the produced products.
+ * Take into consideration that all the products should be selled till the end of N days
+ * @param {integer} Array of positive numbers 
+ * @returns {integer} Max benefit sum
+ */
+const maxBenefit = (arr) => {
+    const n = arr.length
+    let prevMaximum = 0
+    let res = 0
+
+    for (let i = n-1; i >= 0; i--) {
+        if (arr[i] > prevMaximum) {
+            prevMaximum = arr[i]
+        }
+        res += prevMaximum
+    }
+
+    return res;
+}
+
 module.exports = {
     sum1,
     sum2,
     sum3,
+    maxBenefit,
 }

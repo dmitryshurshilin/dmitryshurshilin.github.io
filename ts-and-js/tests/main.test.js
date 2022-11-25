@@ -2,6 +2,7 @@ const {
     sum1,
     sum2,
     sum3,
+    maxBenefit,
 } = require('./main')
 
 /**
@@ -39,4 +40,20 @@ test(`Sum of values of object {a: 1, b: {c: 2, d: {e: 3, f: 4, g: 5 }}} is expec
 })
 test(`Sum of values of object {a: {b: {c: {d: {e: 1, f: 2, g: 3, h: 4, i: 5}}}}} is expected to be 15`, () => {
     expect(sum3({ a: { b: { c: { d: { e: 1, f: 2, g: 3, h: 4, i: 5 } } } } })).toBe(15)
+})
+
+/**
+ * testing of maxBenefit
+ */
+test(`Max sum of [1, 2, 3, 1] is expected to be 10`, () => {
+    expect(maxBenefit([1, 2, 3, 1])).toBe(10)
+})
+test(`Max sum of [1, 2, 3, 4] is expected to be 16`, () => {
+    expect(maxBenefit([1, 2, 3, 4])).toBe(16)
+})
+test(`Max sum of [1, 1, 1, 1] is expected to be 4`, () => {
+    expect(maxBenefit([1, 1, 1, 1])).toBe(4)
+})
+test(`Max sum of [4, 1, 1, 1] is expected to be 7`, () => {
+    expect(maxBenefit([4, 1, 1, 1])).toBe(7)
 })
