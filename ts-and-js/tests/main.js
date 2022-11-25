@@ -34,8 +34,8 @@ const sum3 = (obj) => {
  * We produce one more product every day. There is a storehouse where products can be stored.
  * Calculate the max benefit we can have selling the produced products.
  * Take into consideration that all the products should be selled till the end of N days
- * @param {integer} Array of positive numbers 
- * @returns {integer} Max benefit sum
+ * @param {number[]} arr - Array of positive numbers 
+ * @returns {number} Max benefit sum
  */
 const maxBenefit = (arr) => {
     const n = arr.length
@@ -55,9 +55,9 @@ const maxBenefit = (arr) => {
 /**
  * Implement a difference function, which subtracts one list from another and returns the result.
  * It should remove all values from list a, which are present in list b keeping their order.
- * @param {*} array1 - First array
- * @param {*} array2 - Second array
- * @returns - Result array
+ * @param {any[]} array1 - First array
+ * @param {any[]} array2 - Second array
+ * @returns {any[]} - Result array
  */
 const arrayDiff = (array1, array2) => {
     return array1.filter((item) => array2.indexOf(item) === -1)
@@ -68,8 +68,9 @@ const arrayDiff = (array1, array2) => {
  * For simplicity there are no units for the amounts
  * (e.g. 1 lb of flour or 200 g of sugar are simply 1 or 200).
  * Ingredients that are not present in the objects, can be considered as 0.
- * @param {*} recipe 
- * @param {*} available 
+ * @param {Object} recipe - Recipe's object
+ * @param {Object} available - Available ingredients object 
+ * @returns {number} Max count of bakes for recipe & available
  */
 const bakeCakes = (recipe, available) => {
     let maxCakesCount = []
