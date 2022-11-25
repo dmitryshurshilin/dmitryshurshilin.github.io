@@ -1,9 +1,9 @@
 ## Examples:
 
 + [CSS Grids](https://dmitryshurshilin.github.io/)
-+ [WebP format](https://dmitryshurshilin.github.io/webp/)
-+ [position:sticky](https://dmitryshurshilin.github.io/sticky/)
-+ [object-fit](https://dmitryshurshilin.github.io/object-fit/)
++ [WebP format](https://dmitryshurshilin.github.io/html&css/webp/)
++ [position:sticky](https://dmitryshurshilin.github.io/html&css/sticky/)
++ [object-fit](https://dmitryshurshilin.github.io/html&css/object-fit/)
 
 ## Links:
 
