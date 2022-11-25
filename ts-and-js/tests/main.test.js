@@ -5,6 +5,7 @@ const {
     maxBenefit,
     arrayDiff,
     bakeCakes,
+    createPhoneNumber,
 } = require('./main')
 
 /**
@@ -87,4 +88,16 @@ test(`Bakes count for recipe 3 is expected to be 1`, () => {
     let recipe = {flour: 300, sugar: 150, milk: 100, oil: 100}
     let available = {sugar: 500, flour: 2000, milk: 2000, oil: 100}
     expect(bakeCakes(recipe, available)).toBe(1)
+})
+
+/**
+ * testing of createPhoneNumber
+ */
+describe('createPhoneNumber' , () => {
+    test('Result for [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] is (123) 456-7890', () => {
+        expect(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])).toBe('(123) 456-7890')
+    })
+    test('Result for [1, 1, 1, 1, 1, 1, 1, 1, 1, 1] is (111) 111-1111', () => {
+        expect(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])).toBe('(111) 111-1111')
+    })
 })

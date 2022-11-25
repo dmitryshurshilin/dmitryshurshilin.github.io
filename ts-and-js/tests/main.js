@@ -81,6 +81,16 @@ const bakeCakes = (recipe, available) => {
     }
     return Math.min.apply(null, maxCakesCount)
 }
+/**
+ * Write a function that accepts an array of 10 integers (between 0 and 9),
+ * that returns a string of those numbers in the form of a phone number.
+ * @param {number[]} numbers - Array of numbers
+ * @returns {string} Numbers in the form of a phone number
+ */
+const createPhoneNumber = (numbers) => {
+    const format = '(xxx) xxx-xxxx'
+    return numbers.reduce((format, number) => format.replace('x', number), format)
+}
 
 module.exports = {
     sum1,
@@ -89,4 +99,5 @@ module.exports = {
     maxBenefit,
     arrayDiff,
     bakeCakes,
+    createPhoneNumber,
 }
