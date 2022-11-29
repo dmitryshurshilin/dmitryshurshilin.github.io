@@ -1,6 +1,6 @@
 const CACHE_NAME = 'AssetsCache'
 
-const ASSETS_TO_CACHE = [
+const RESOURCES_TO_CACHE = [
     '/service-workers/',
     '/service-workers/main.js',
     '/service-workers/styles.css',
@@ -13,15 +13,15 @@ const ASSETS_TO_CACHE = [
 
 self.addEventListener('install', (event) => {
     event.waitUntil(caches.open(CACHE_NAME).then((cache) => {
-        return cache.addAll(ASSETS_TO_CACHE)
+        return cache.addAll(RESOURCES_TO_CACHE)
     }))
 })
 
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url)
-    const isCachedAsset = ASSETS_TO_CACHE.includes(url.pathname)
+    const isCachedResource = RESOURCES_TO_CACHE.includes(url.pathname)
 
-    if (isCachedAsset) {
+    if (isCachedResource) {
         event.respondWith(caches.open(CACHE_NAME).then((cache) => {
             return cache.match(event.request.url)
         }))
