@@ -14,3 +14,7 @@
 ### WebP
 + [A new image format for the Web](https://developers.google.com/speed/webp/)
 + [Can I use WebP](http://caniuse.com/#search=webp)
+
+### Service workers
++ [Service workers example](/service-workers/)
++ [README](https://github.com/dmitryshurshilin/dmitryshurshilin.github.io/tree/master/service-workers/)
