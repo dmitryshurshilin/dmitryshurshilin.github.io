@@ -16,5 +16,5 @@
 + [Can I use WebP](http://caniuse.com/#search=webp)
 
 ### Service workers
-+ [Service workers example](/service-workers/)
-+ [README](https://github.com/dmitryshurshilin/dmitryshurshilin.github.io/tree/master/service-workers/)
++ [Service workers example](https://dmitryshurshilin.github.io/service-workers/)
++ [README](/service-workers/)
