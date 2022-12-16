@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indexeddb</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <section class="form">
+        <ul class="form__items">
+            <li class="form__item">
+                <label for="author" class="form__label">Author:</label>
+                <input type="text" class="form__input" id="author" name="author" />
+            </li>
+            <li class="form__item">
+                <label for="title" class="form__label">Title:</label>
+                <input type="text" class="form__input" id="title" name="title" />
+            </li>
+        </ul>
+        <div class="form__submit-wrapper">
+            <button type="button" id="submit" class="form__submit-button">Add</button>
+        </div>
+    </section>
+    <section class="data">
+        <ul class="data__items" id="data"></ul>
+        <div class="form__update-wrapper">
+            <button type="button" id="update" class="form__update-button">Update data</button>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
