@@ -4,6 +4,8 @@
 + [WebP format](https://dmitryshurshilin.github.io/html-and-css/webp/)
 + [position:sticky](https://dmitryshurshilin.github.io/html-and-css/sticky/)
 + [object-fit](https://dmitryshurshilin.github.io/html-and-css/object-fit/)
++ [Service Workers](https://dmitryshurshilin.github.io/service-workers/)
++ [IndexedDB](https://dmitryshurshilin.github.io/indexeddb/)
 
 ## Links:
 
